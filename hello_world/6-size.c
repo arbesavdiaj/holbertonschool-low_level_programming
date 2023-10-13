@@ -8,4 +8,6 @@
 int main(void)
 {
 printf("Size of a char: %u bytes", sizeof(char));
+
+return (0);
 }
