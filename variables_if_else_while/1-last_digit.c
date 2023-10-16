@@ -4,10 +4,11 @@
 /* more headers goes there */
 
 /* betty style doc for function main goes there */
+int n;
 int lastDigit = n % 10;
 
+
 int main(void) {
-    int n;
 
     srand(time(0));
     n = rand() - RAND_MAX / 2;
