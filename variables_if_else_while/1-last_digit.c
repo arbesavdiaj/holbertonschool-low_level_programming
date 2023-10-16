@@ -4,15 +4,13 @@
 /* more headers goes there */
 
 /* betty style doc for function main goes there */
+int lastDigit = n % 10;
 
 int main(void) {
     int n;
 
     srand(time(0));
     n = rand() - RAND_MAX / 2;
-    
-    // Use % to get the last digit of n
-    int lastDigit = n % 10;
 
     printf("Last digit of %d is %d", n, lastDigit);
 
