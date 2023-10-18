@@ -1,17 +1,18 @@
-#include "main.h"
+#include"main.h"
+
 /**
- * print_alphabet_x10 - Entry point
+ * main - check the code.
+ *
  * Return: Always 0.
  */
-void print_alphabet_x10(void)
-{
-	char i;
-	int b;
 
-	for (b = 0; b < 10; b++)
-	{
-	for (i = 'a'; i <= 'z'; i++)
+void print_alphabet_x10(void)
+
+{
+	char letter;
+	
+	for (letter = 'a'; letter <= 'z' ; letter++)
+		_putchar(letter * 10);
 		_putchar('\n');
-		_putchar(i);
-	}
+
 }
