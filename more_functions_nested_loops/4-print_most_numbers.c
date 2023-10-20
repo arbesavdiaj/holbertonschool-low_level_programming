@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * print_numbers - prints the numbers
+ * print_most_numbers - prints the numbers
  * Return: numbers from 1 to 9 without 2 and 4
  */
-void print_numbers(void)
+void print_most_numbers(void)
 {
 	int n;
 
@@ -12,7 +12,7 @@ void print_numbers(void)
 	{
 		if (n != 2 && n != 4)
 		{
-		_putchar(n + 48);
+			_putchar(n + 48);
 		}
 	}
 	_putchar('\n');
