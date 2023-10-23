@@ -1,21 +1,17 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * _puts - prints a string
- * @s: member
- * Return: Always 0.
+ * @str: entered value
  */
-void _puts(char *s)
+void _puts(char *str)
 {
-	int length = 0;
+	int i = 0;
 
-	while (*s)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		length++;
-		s++;
-		_putchar('\n');
+		_putchar(str[i]);
 	}
-	return (length);
+	_putchar('\n');
 }
 
