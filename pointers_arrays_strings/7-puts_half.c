@@ -4,23 +4,24 @@
  * puts_half - prints a string
  * @str: entered value
  */
+
 void puts_half(char *str)
 {
-	int length = strlen(str);
-	int start_index;
+	int len, n, i;
 
-	if (length % 2 == 0)
+	len = strlen(str);
+	n = len / 2;
+
+	if (len % 2 != 0)
 	{
-		start_index = length / 2;
+		n++;
 	}
-	else
-	{
-		start_index = (length - 1) / 2;
-	}
-	for (int i = start_index; i < length; i++)
+
+	for (i = n; i < len; i++)
 	{
 		_putchar(str[i]);
 	}
+
 	_putchar('\n');
 }
 
