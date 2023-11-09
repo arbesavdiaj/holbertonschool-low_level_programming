@@ -1,8 +1,13 @@
 #include <stdio.h>
+/**
+ * main - function that prints the name of the file
+ *
+ * Return: void
+ */
 
-int main()
+int main(void)
 {
-	printf("Compile from file: %s\n", 2-main.c);
+	printf("Compile from file: %s\n", __FILE__);
 
-	return 0;
+	return (0);
 }
