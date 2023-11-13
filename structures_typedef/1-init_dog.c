@@ -1,15 +1,14 @@
+#include "dog.h"
 #include <stddef.h>
-#ifndef DOG_H
-#define DOG_H
 
 /**
- * init_dog - Short description
- * @name: hello
+ * init_dog - function
+ * @d: d
+ * @name: name
  * @age: age
  * @owner: owner
- * @d: helloo
- * Description: Longer description
- */
+ **/
+
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
 	if (d != NULL)
@@ -19,4 +18,4 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 		d->owner = owner;
 	}
 }
-#endif
+
