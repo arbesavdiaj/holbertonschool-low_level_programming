@@ -1,6 +1,6 @@
-#include <stddef.h>
 #ifndef PRINT_NAME
 #define PRINT_NAME
+#include <stddef.h>
 
 /**
  * print_name - function that prints a name
