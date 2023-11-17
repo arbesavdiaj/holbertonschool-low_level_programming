@@ -33,11 +33,10 @@ void print_all(const char * const format, ...)
 				str = va_arg(args, char*);
 				if (str == NULL)
 					printf("(nil)");
-				else
+				if
 					printf("%s", str);
 				break;
 		}
-		if (format[i + 1] != '\0')
 			printf(", ");
 		i++;
 	}
