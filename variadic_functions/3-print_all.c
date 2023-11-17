@@ -2,7 +2,7 @@
 #include <stdarg.h>
 /**
  * print_all - a function that prints anything.
- * @format: a list of types of arguments passed to the function
+ * @format: list of types of arguments passed to the function.
  *
  * Return: Nothing.
  */
@@ -10,39 +10,38 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	unsigned int i = 0;
+	int i = 0;
 	char *str;
-	char format_char;
+	char c;
+	int integer;
+	float f;
 
 	va_start(args, format);
 
-	while ((format_char = format[i]) != '\0')
+	while (format[i])
 	{
-		switch (format_char)
+		switch (format[i++])
 		{
 			case 'c':
-				printf("%c", va_arg(args, int));
+				c = va_arg(args, int);
+				printf("%c", c);
 				break;
 			case 'i':
-				printf("%d", va_arg(args, int));
+				integer = va_arg(args, int);
+				printf("%d", integer);
 				break;
 			case 'f':
-				printf("%f", va_arg(args, double));
+				f = va_arg(args, double);
+				printf("%f", f);
 				break;
 			case 's':
-				str = va_arg(args, char*);
-				if (str == NULL)
-					printf("(nil)");
-				else
-					printf("%s", str);
+				str = va_arg(args, char *);
+				printf("%s", str ? str : "(nil)");
 				break;
 		}
-			printf(", ");
-		i++;
 	}
 
 	printf("\n");
-
 	va_end(args);
 }
 
