@@ -1,23 +1,30 @@
-#include "lists.h"
-#include <string.h>
 #include <stdlib.h>
-
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
 /**
- * add_node_end -adds node at the end
- * @head: -points to the respective structure
- * @str: -points to respective string
- * Return: (new)
+ * add_node_end - check the code
+ * @head:sdfsdf
+ * @str:sdfsdf
+ * Return: Always 0.
  */
 
 list_t *add_node_end(list_t **head, const char *str)
 {
+	list_t *temp;
 	list_t *new = malloc(sizeof(list_t));
-	list_t *last = *head;
 
 	if (new == NULL)
 		return (NULL);
 
 	new->str = strdup(str);
+	if (new->str == NULL)
+	{
+		free(new);
+		return (NULL);
+	}
+
+	new->len = strlen(str);
 	new->next = NULL;
 
 	if (*head == NULL)
@@ -25,14 +32,11 @@ list_t *add_node_end(list_t **head, const char *str)
 		*head = new;
 		return (new);
 	}
-
-
-	while (last->next != NULL)
+	temp = *head;
+	while (temp->next != NULL)
 	{
-		last = last->next;
+		temp = temp->next;
 	}
-
-	last->next = new;
-
+	temp->next = new;
 	return (new);
 }
