@@ -1,12 +1,11 @@
-#include "lists.h"
-#include <stdlib.h>
+#include"lists.h"
+#include<stdlib.h>
 
 /**
- * delete_dnodeint_at_index - function
- * @head: head
- * @index: index
- *
- * Return: 1
+ * delete_dnodeint_at_index -deletes node at specific index
+ * @head: -points to the head node
+ * @index: -holds value for output
+ * Return: (1)
  */
 
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
@@ -15,10 +14,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	dlistint_t *temp = *head;
 
 	if (temp == NULL)
-	{
 		return (-1);
-	}
-
 	if (index == 0)
 	{
 		*head = temp->next;
@@ -27,20 +23,17 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		free(temp);
 		return (1);
 	}
-
 	while (temp != NULL && i < index)
 	{
-		if (i == index)
-		{
-			if (temp->next != NULL)
-				temp->next->prev = temp->prev;
-			if (temp->prev != NULL)
-				temp->prev->next = temp->next;
-			free(temp);
-			return (1);
-		}
 		temp = temp->next;
 		i++;
 	}
+	if (temp == NULL)
+		return (-1);
+	temp->prev->next = temp->next;
+	if (temp->next != NULL)
+		temp->next->prev = temp->prev;
+	free(temp);
+
 	return (1);
 }
