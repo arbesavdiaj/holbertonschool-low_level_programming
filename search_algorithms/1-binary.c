@@ -6,19 +6,6 @@
  * @start: The starting index of the subarray to print
  * @end: The ending index of the subarray to print
 */
-void print_array(int *array, size_t start, size_t end)
-{
-	printf("Searching in array: ");
-
-	while (start < end)
-	{
-		printf("%d, ", array[start]);
-		start++;
-	}
-
-	printf("%d\n", array[start]);
-}
-
 
 void print_array(int *array, size_t start, size_t end)
 {
